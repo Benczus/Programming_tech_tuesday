@@ -6,6 +6,18 @@ public abstract class UserAccount implements Account{
     private String userName;
     private String password;
 
+    public double getBalance() {
+        return balance;
+    }
+
+    public String getName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
     protected UserAccount(double balance, String userName, String password) {
         this.balance = balance;
         this.userName = userName;

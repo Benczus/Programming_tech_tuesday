@@ -7,8 +7,9 @@ public class PremiumUserAccount extends UserAccount{
 
     @Override
     protected UserAccount createNewAccount(String userName, String password) {
-        return new PremiumUserAccount(0,userName,password);
+        return new PremiumUserAccount(0, userName, password);
     }
+
 
     @Override
     public void withdraw(int amount) {

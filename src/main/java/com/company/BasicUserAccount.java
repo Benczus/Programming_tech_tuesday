@@ -19,4 +19,5 @@ public class BasicUserAccount extends UserAccount{
     public void deposit(int amount) {
 
     }
+
 }

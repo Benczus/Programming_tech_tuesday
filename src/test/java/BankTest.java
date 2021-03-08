@@ -1,8 +1,9 @@
 import com.company.Bank;
 import com.company.DigitalBank;
-import junit.framework.Assert;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
 
 import java.util.UUID;
 
@@ -12,19 +13,19 @@ public class BankTest {
     String ownerName="Dagobert";
     String name= "Dagobert Inc";
     UUID id= UUID.randomUUID();
-    Bank digitalBank= new DigitalBank(id, name, ownerName);
 
-    @BeforeAll
+    @BeforeTest
     public void initTest(){
-        digitalBank.addUserAccount("Kis József", UUID.randomUUID());
-        digitalBank.addUserAccount("Nagy Péter", UUID.randomUUID());
+        bank= new DigitalBank(id, name, ownerName);
+        bank.addUserAccount("Kis József", "123");
+        bank.addUserAccount("Nagy Péter", "456");
     }
-
 
 
     @Test
     public void authenticateUserTest(){
-
-        Assert.assertEquals(digitalBank.authenticateUser(digitalBank.getUser(1241321), "123"), true);
+        Assert.assertEquals(bank.authenticateUser(bank.getUser("Kis József"), "123"), true);
     }
+
+
 }
