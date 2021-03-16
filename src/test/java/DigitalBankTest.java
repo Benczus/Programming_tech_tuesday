@@ -1,7 +1,5 @@
-import com.company.Account;
-import com.company.Bank;
-import com.company.BasicUserAccount;
-import com.company.DigitalBank;
+import com.company.account.Account;
+import com.company.bank.DigitalBank;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -15,13 +13,18 @@ public class DigitalBankTest {
 
 
     DigitalBank digitalBank;
-    String ownerName="Dagobert";
-    String name= "Dagobert Inc";
-    UUID id= UUID.randomUUID();
+    String ownerName;
+    String name;
+    UUID id;
+    List<Account> accounts;
+
 
 
     @BeforeTest
     public void initTest(){
+        ownerName="Dagobert";
+        name= "Dagobert Inc";
+        id= UUID.randomUUID();
         digitalBank= new DigitalBank(id, name, ownerName);
         digitalBank.addUserAccount("Kis József", "123");
         digitalBank.addUserAccount("Nagy Péter", "456");
@@ -35,9 +38,11 @@ public class DigitalBankTest {
 
     @Test
     public void processAccountDetailsTest(){
-        List accountlist= new ArrayList<Account>();
-        BasicUserAccount basicUserAccount= new BasicUserAccount();
-        accountlist.add( )
-        digitalBank.processAccountDetails();
+        List<String> expected= new ArrayList<>();
+        expected.add("Kis József");
+        expected.add("Nagy Péter");
+        Assert.assertTrue(digitalBank.processAccountDetails().containsAll(expected));
     }
+
+
 }

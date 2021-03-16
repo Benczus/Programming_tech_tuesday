@@ -1,6 +1,5 @@
-import com.company.Bank;
-import com.company.DigitalBank;
-import org.junit.Before;
+import com.company.bank.Bank;
+import com.company.bank.DigitalBank;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;

@@ -1,10 +1,13 @@
-package com.company;
+package com.company.accountdb;
+
+import com.company.account.Account;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 public class AccountMemoryDB implements AccountDB {
+
     List<Account> accounts;
 
     public AccountMemoryDB(List<Account> accounts) {

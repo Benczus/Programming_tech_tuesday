@@ -1,6 +1,8 @@
-package com.company;
+package com.company.account;
 
-public class ManagementAccount implements Account{
+import com.company.account.Account;
+
+public class ManagementAccount implements Account {
 
     String username;
     String password;
@@ -29,5 +31,24 @@ public class ManagementAccount implements Account{
         return this.username;
     }
 
+    @Override
+    public double getBalance() {
+        return 0;
+    }
 
+    @Override
+    public void setBalance(double amount) {
+
+    }
+
+
+    @Override
+    public void withdraw(double amount) {
+
+    }
+
+    @Override
+    public void deposit(double amount) {
+
+    }
 }

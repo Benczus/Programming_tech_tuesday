@@ -1,10 +1,14 @@
-package com.company;
+package com.company.account;
 
 public abstract class UserAccount implements Account{
 
     private double balance;
     private String userName;
     private String password;
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
 
     public double getBalance() {
         return balance;
@@ -44,6 +48,4 @@ public abstract class UserAccount implements Account{
     }
 
 
-    public abstract void withdraw(int amount);
-    public abstract void deposit(int amount);
 }

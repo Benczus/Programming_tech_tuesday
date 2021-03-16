@@ -1,4 +1,6 @@
-package com.company;
+package com.company.accountdb;
+
+import com.company.account.Account;
 
 import java.util.List;
 import java.util.UUID;
